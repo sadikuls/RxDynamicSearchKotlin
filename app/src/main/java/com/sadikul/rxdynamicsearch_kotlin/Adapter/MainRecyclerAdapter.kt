@@ -29,7 +29,7 @@ class MainRecyclerAdapter(private val context: Context) : RecyclerView.Adapter<M
     fun setData(list: MutableList<SearchItem>) {
         this.list.clear()
         this.list = list
-        //this.notifyDataSetChanged()
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: MainAdapterViewHolder, position: Int) {

@@ -5,8 +5,12 @@ import com.google.gson.annotations.SerializedName
 class SearchResult {
 
     @SerializedName("notice")
-    var notice: List<SearchItem>? = null
+    private var notice: MutableList<SearchItem>? = null
 
+
+    fun getSearchItems(): MutableList<SearchItem>?{
+        return this.notice
+    }
 
     override fun toString(): String {
         return "Notices{" +

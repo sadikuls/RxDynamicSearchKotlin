@@ -1,6 +1,7 @@
 package com.sadikul.rxdynamicsearch_kotlin.Network
 
 import com.sadikul.rxdynamicsearch_kotlin.Model.SearchItem
+import com.sadikul.rxdynamicsearch_kotlin.Model.SearchResult
 import com.sadikul.rxdynamicsearch_kotlin.Utils.Constants
 
 import io.reactivex.Observable
@@ -14,6 +15,6 @@ import retrofit2.http.Query
 interface ApiInterface {
 
     @POST(Constants.search_result_api)
-    fun getData(@Query("key") key: String): Observable<SearchItem>
+    fun getData(@Query("key") key: String): Observable<SearchResult>
 
 }

@@ -14,7 +14,5 @@ interface MainActivityView {
 
     fun showMessage(msg: String)
 
-    fun getAppContext(): Context{
-        return getAppContext()
-    }
+    fun getAppContext(): Context
 }
