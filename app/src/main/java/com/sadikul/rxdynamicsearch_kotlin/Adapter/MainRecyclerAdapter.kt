@@ -8,28 +8,21 @@ import android.view.LayoutInflater
 import android.view.View
 import com.sadikul.rxdynamicsearch_kotlin.Model.SearchItem
 import com.sadikul.rxdynamicsearch_kotlin.R
-import java.util.*
 
-class MainRecyclerAdapter(private val context: Context, list: MutableList<SearchItem>) : RecyclerView.Adapter<MainRecyclerAdapter.MainAdapterViewHolder>() {
-
-    override fun getItemCount(): Int {
-
-        return list.size
-    }
+class MainRecyclerAdapter(private val context: Context) : RecyclerView.Adapter<MainRecyclerAdapter.MainAdapterViewHolder>() {
 
     private val inflater: LayoutInflater
     internal var list: MutableList<SearchItem> = mutableListOf()
 
 
     init {
-        this.list = list
         inflater = LayoutInflater.from(context)
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapterViewHolder {
 
         val view = inflater.inflate(R.layout.item_search_layout, parent, false)
-        val mainAdapterViewHolder = MainAdapterViewHolder(view)
         return MainAdapterViewHolder(view)
     }
 
@@ -50,6 +43,11 @@ class MainRecyclerAdapter(private val context: Context, list: MutableList<Search
     fun clear() {
         this.list.clear()
         notifyDataSetChanged()
+    }
+
+
+    override fun getItemCount(): Int {
+        return this.list.size
     }
 
     inner class MainAdapterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
